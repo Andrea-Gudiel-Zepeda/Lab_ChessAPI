@@ -41,7 +41,7 @@ try
     app.UseMiddleware(typeof(chessAPI.customMiddleware<int>));
 
     #region "REST routes"
-    app.MapGet("/", () => Results.BadRequest());
+    app.MapGet("/", () => {return "hola mundo!!!";} );
 
     #region "Player REST Commands"
     app.MapGet("game/{id}", async (IGameBusiness bs, long id) =>
